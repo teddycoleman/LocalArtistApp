@@ -13,14 +13,18 @@ app.config(function($routeProvider) {
 });
 
 
-app.controller("HomepageController", function ($scope, $uibModal, $log) {
+app.controller("HomepageController", function () {
+
+});
+
+app.controller("SignUpController", function ($scope, $uibModal, $log) {
 
   $scope.items = ['item1', 'item2', 'item3'];
 
   $scope.open = function () {
 
     var modalInstance = $uibModal.open({
-      templateUrl: 'templates/myModalContent.html',
+      templateUrl: 'templates/signup_modal.html',
       controller: 'ModalInstanceCtrl',
       scope: $scope,
       resolve: {
