@@ -1,2 +1,77 @@
-<h1> Hello </h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12"><h1> PHOTO PLACEHOLDER </h1></div>
+	</div>
 
+	<div class="row">
+		<div class="col-md-4">
+			<div class="row">
+				<div class="col-md-12">
+					<h4> Explore Art </h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<img src="img/noun_547038_cc.png" class='img-responsive'>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4> Learn more about local art near you! </h4>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="row">
+				<div class="col-md-12">
+					<h4> Explore Artists </h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<img src="img/noun_603556_cc.png" class='img-responsive'>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4> Learn more about local artists near you! </h4>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="row">
+				<div class="col-md-12">
+					<h4> Explore Venues </h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<img src="img/noun_642358_cc.png" class='img-responsive'>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4> Learn more about local venues near you! </h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-10">
+			<select class="form-control">
+			  <option>Art</option>
+			  <option>Artist</option>
+			  <option>Venue</option>
+			</select>
+		</div>
+		<div class="col-md-2">
+			<button class='btn btn-primary'> Search </button>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+  <button class="btn" ng-click="open()">Open me!</button>
+  <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+</div>
