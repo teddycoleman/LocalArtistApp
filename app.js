@@ -2,6 +2,11 @@ var app = angular.module("localArtist", ['ngRoute','ngAnimate','ngTouch','ui.boo
 
 app.config(function($routeProvider) {
 	$routeProvider
+    .when("/create_profile", {
+      templateUrl: "templates/create_profile.html",
+      controller: "CreateProfileController",
+      controllerAs: "createProfileCtrl"
+    })
 		.when("/", {
 			templateUrl: "templates/homepage.html",
 			controller: "HomepageController",
@@ -16,7 +21,7 @@ app.controller("HomepageController", function () {
 
 });
 
-app.controller("NavBarController", function ($scope, $uibModal, $log, $http) {
+app.controller("NavBarController", function ($scope, $uibModal, $log, $http, $location) {
 
   $scope.openSignUp = function () {
 
@@ -78,6 +83,10 @@ app.controller("NavBarController", function ($scope, $uibModal, $log, $http) {
     sessionStorage.removeItem("auth_token");
   }
 
+  $scope.goToCreateProfile = function(){
+    $location.path("/create_profile");
+  } 
+
   $scope.isSignedIn = function(){
     return sessionStorage.getItem("auth_token") ? true : false;
   }
@@ -94,4 +103,9 @@ app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, user) {
     $uibModalInstance.dismiss('cancel');
   };
 });
+
+app.controller('CreateProfileController', function () {
+
+});
+
 
