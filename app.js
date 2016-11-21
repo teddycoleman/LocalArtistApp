@@ -1,4 +1,4 @@
-var app = angular.module('localArtist', ['ngRoute','ngAnimate','ngTouch','ui.bootstrap']); 
+var app = angular.module('localArtist', ['ngRoute','ngAnimate','ngTouch','ui.bootstrap','ngFileUpload']); 
 
 app.config(function($routeProvider) {
 	$routeProvider

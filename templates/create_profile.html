@@ -34,12 +34,12 @@
           <textarea class="form-control" name="description" ng-model="profile.description"> </textarea>
         </div>
       </div>
-<!--       <div class="form-group row" >
-        <label class="col-md-4 control-label">Profile Photo</label>
+      <div class="form-group row" >
+        <label class="col-md-4 control-label">Photos</label>
         <div class="col-md-4">
-          <input type="file" class="form-control" name="photo" ng-model="profile.photo" />
+          <input type="file" ngf-select ng-model="profile.photo" name="photo" accept="image/*" ngf-max-size="2MB" required ngf-model-invalid="errorFile">
         </div>
-      </div> -->
+      </div>
 		</fieldset>
 	</form>
 	<div class="row">
