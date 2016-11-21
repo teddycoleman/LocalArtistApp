@@ -12,40 +12,73 @@ app.config(function($routeProvider) {
 		});
 });
 
-
 app.controller("HomepageController", function () {
 
 });
 
-app.controller("SignUpController", function ($scope, $uibModal, $log) {
+app.controller("NavBarController", function ($scope, $uibModal, $log, $http) {
 
-  $scope.items = ['item1', 'item2', 'item3'];
-
-  $scope.open = function () {
+  $scope.openSignUp = function () {
 
     var modalInstance = $uibModal.open({
       templateUrl: 'templates/signup_modal.html',
       controller: 'ModalInstanceCtrl',
       scope: $scope,
       resolve: {
-        items: function () {
-          return $scope.items;
+        user: function () {
+          return $scope.user;
         }
       }
     });
 
-    modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
+    modalInstance.result.then(
+      function (user) {
+        $http({
+          method: 'POST',
+          url: 'http://localhost:3000/users.json',
+          data: {user: user}
+        }).success(function (user){
+          sessionStorage.setItem("auth_token", user.auth_token);
+        }).error(function(error) {
+          Alert("Error creating user!");
+        });
+      }
+    );
+  };
+
+  $scope.openLogin = function () {
+
+    var modalInstance = $uibModal.open({
+      templateUrl: 'templates/login_modal.html',
+      controller: 'ModalInstanceCtrl',
+      scope: $scope,
+      resolve: {
+        user: function () {
+          return $scope.user;
+        }
+      }
     });
+
+    modalInstance.result.then(
+      function (user) {
+        $http({
+          method: 'POST',
+          url: 'http://localhost:3000/users/sign_in.json',
+          data: {user: user}
+        }).success(function (user){
+          sessionStorage.setItem("auth_token", user.auth_token);
+        }).error(function(error) {
+          Alert("Error creating user!");
+        });
+      }
+    );
   };
 });
 
-app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, items) {
+app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, user) {
 
   $scope.ok = function () {
-    $uibModalInstance.close($scope.selected.item);
+    $uibModalInstance.close($scope.user);
   };
 
   $scope.cancel = function () {
