@@ -20,6 +20,10 @@
 
   <!-- Main app script -->
   <script src="app.js"></script>
+  <script src="controllers/HomepageController.js"></script>
+  <script src="controllers/ModalInstanceCtrl.js"></script>
+  <script src="controllers/NavBarController.js"></script>
+  <script src="controllers/CreateProfileController.js"></script>
 </head>
 <body>
 
@@ -33,7 +37,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">LocalArtist</a>
+	      <a class="navbar-brand" href="#/">LocalArtist</a>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -43,7 +47,7 @@
 	        <button class="btn" ng-click="openSignUp()">Sign Up</button>
 	      </ul>
 	      <ul ng-if="isSignedIn()" class="nav navbar-nav navbar-right">
-	        <button class="btn"> Create Profile </button>
+	        <button class="btn" ng-click="goToCreateProfile()"> Create Profile </button>
 	        <button class="btn" ng-click="logout()"> Log Out </button>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
