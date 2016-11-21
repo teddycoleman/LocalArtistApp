@@ -73,6 +73,15 @@ app.controller("NavBarController", function ($scope, $uibModal, $log, $http) {
       }
     );
   };
+
+  $scope.logout = function(){
+    sessionStorage.removeItem("auth_token");
+  }
+
+  $scope.isSignedIn = function(){
+    return sessionStorage.getItem("auth_token") ? true : false;
+  }
+
 });
 
 app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, user) {

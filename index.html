@@ -38,9 +38,13 @@
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav navbar-right">
+	      <ul ng-if="!isSignedIn()" class="nav navbar-nav navbar-right">
 	        <button class="btn" ng-click="openLogin()">Login</button>
 	        <button class="btn" ng-click="openSignUp()">Sign Up</button>
+	      </ul>
+	      <ul ng-if="isSignedIn()" class="nav navbar-nav navbar-right">
+	        <button class="btn"> Create Profile </button>
+	        <button class="btn" ng-click="logout()"> Log Out </button>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
