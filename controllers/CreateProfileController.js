@@ -7,8 +7,6 @@ function CreateProfileController ($scope, $http, $location, Upload) {
 
 	$scope.create_profile = function (){
 		console.log($scope.profile);
-		console.log($scope.profile.photo)
-		console.log($scope.profile.photo.$valid);
     $http({
       method: 'POST',
       url: 'http://localhost:3000/profiles.json',
@@ -25,8 +23,8 @@ function CreateProfileController ($scope, $http, $location, Upload) {
     }).success(function (profile){
     	console.log(profile);
     	console.log("profile uploaded properly")
-    	console.log($scope.profile.photo);
-    	$scope.upload($scope.profile.photo, profile);
+    	// console.log($scope.profile.photo);
+    	// $scope.upload($scope.profile.photo, profile);
     }).error(function(error) {
       console.log(error);
     });

@@ -7,6 +7,11 @@ app.config(function($routeProvider) {
       controller: "CreateProfileController",
       controllerAs: "createProfileCtrl"
     })
+    .when("/profiles/:id", {
+      templateUrl: "templates/profile.html",
+      controller: "ProfileController",
+      controllerAs: "profileCtrl"
+    })
 		.when("/", {
 			templateUrl: "templates/homepage.html",
 			controller: "HomepageController",
