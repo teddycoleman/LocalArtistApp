@@ -1,16 +1,38 @@
-<h1> Profile </h1>
+<div class="container">
+	<div class="row">
+		<div class="galleria col-md-12">
+		    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Old_guitarist_chicago.jpg">
+		    <img src="http://www.arthistoryarchive.com/arthistory/images/PabloPicasso-Guernica-1937.jpg">
+		    <img src="http://www.themost10.com/wp-content/uploads/2012/03/Le-R%C3%AAve-The-Dream-By-Pablo-Picasso.jpg">
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-4">
+			<img src="http://www.theartstory.org/images20/new_design/bio/bio_picasso_pablo.jpg">
+			<br>
+			<h3>{{profile.name}}</h3> 
+			<h3>{{profile.style}}</h3> 
+			<br>
+		</div>
+		<div class="col-md-8">
+			<p>{{profile.description}}</p> 
+		</div>
+	</div>
+	<br> 
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Showings for {{profile.name}}</h2>
+		</div>
+	</div>
+	<div class="row" ng-repeat="showing in showings">
+		<div class="col-md-12">
+			<p> {{showing.description}} at {{showing.gallery_id}} [TODO: Make this not suck]</p>
+		</div>
+	</div>
 
-<div class="galleria">
-    <img src="https://www.conncoll.edu/media/major-images/Art.jpg">
-    <img src="http://intuitivecreativity.typepad.com/.a/6a00d83451dc5b69e201bb087309e5970d-pi">
-    <img src="http://smart-defence.co.uk/wp-content/uploads/2015/03/art.jpg">
+	<br>
+	<br>
 </div>
 
-<script>
-  Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
-  Galleria.configure({
-    imageCrop: true,
-    transition: 'fade'
-	});
-  Galleria.run('.galleria');
-</script>
+
