@@ -9,7 +9,7 @@
 <div class="container">
   <form name="createProfile">
     <fieldset>
-      <div class="form-group row" >
+      <div class="form-group row" name="profile" >
         <label class="col-md-4 control-label">Profile Type</label>
         <div class="col-md-4">
         	<input type="radio" ng-model="profile.profile_type" value="gallery">Venue<br>
@@ -34,12 +34,12 @@
           <textarea class="form-control" name="description" ng-model="profile.description"> </textarea>
         </div>
       </div>
-<!--       <div class="form-group row" >
-        <label class="col-md-4 control-label">Profile Photo</label>
+      <div class="form-group row" >
+        <label class="col-md-4 control-label">Photos</label>
         <div class="col-md-4">
-          <input type="file" class="form-control" name="photo" ng-model="profile.photo" />
+			<input type="file" ngf-select ng-model="profile.photo" name="file" accept="image/*">
         </div>
-      </div> -->
+      </div>
 		</fieldset>
 	</form>
 	<div class="row">
@@ -49,5 +49,3 @@
 	   </div>
 	</div>
 </div>
-
-
