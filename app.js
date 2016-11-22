@@ -1,4 +1,9 @@
-var app = angular.module('localArtist', ['ngRoute','ngAnimate','ngTouch','ui.bootstrap','ngFileUpload']); 
+var app = angular.module('localArtist', ['ngRoute','ngAnimate','ngTouch','ui.bootstrap','ngFileUpload'])
+	.controller('CreateProfileController', CreateProfileController)
+	.controller('HomepageController', HomepageController)
+	.controller('NavBarController', NavBarController)
+	.controller('ModalInstanceCtrl', ModalInstanceCtrl)
+	.service('PhotoUploadService', PhotoUploadService);
 
 app.config(function($routeProvider) {
 	$routeProvider
@@ -16,4 +21,3 @@ app.config(function($routeProvider) {
 			redirectTo: "/"
 		});
 });
-

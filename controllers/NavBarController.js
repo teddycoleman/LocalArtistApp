@@ -1,7 +1,3 @@
-angular
-  .module('localArtist')
-  .controller('NavBarController', NavBarController);
-
 function NavBarController ($scope, $uibModal, $log, $http, $location) {
 
   $scope.openSignUp = function () {
@@ -66,7 +62,7 @@ function NavBarController ($scope, $uibModal, $log, $http, $location) {
 
   $scope.goToCreateProfile = function(){
     $location.path("/create_profile");
-  } 
+  }
 
   $scope.isSignedIn = function(){
     return sessionStorage.getItem("auth_token") ? true : false;
