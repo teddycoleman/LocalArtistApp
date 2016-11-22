@@ -8,36 +8,41 @@ function CreateProfileController ($scope, $http, $location, Upload) {
 	$scope.create_profile = function (){
 		console.log($scope.profile);
 		console.log($scope.profile.photo)
+		console.log($scope.profile.photo.$valid);
     $http({
       method: 'POST',
       url: 'http://localhost:3000/profiles.json',
-      data: {profile: {
+      data: { profile: {
       		profile_type: $scope.profile.profile_type,
       		name: $scope.profile.name,
       		style: $scope.profile.style,
       		description: $scope.profile.description
       	}
       },
-      headers: {Authorization: "Token token=" + sessionStorage.getItem("auth_token")}
+      headers: {
+      	Authorization: "Token token=" + sessionStorage.getItem("auth_token")
+      }
     }).success(function (profile){
     	console.log(profile);
     	console.log("profile uploaded properly")
     	console.log($scope.profile.photo);
-    	$scope.upload($scope.file);
+    	$scope.upload($scope.profile.photo, profile);
     }).error(function(error) {
-      alert(error);
+      console.log(error);
     });
 	}
 	$scope.cancel = function() {
 		$location.path("/");
 	}
 
-  $scope.upload = function(file){
+  $scope.upload = function(file, profile){
+  	console.log("type: " + $scope.profile.photo.type);
   	Upload.upload({
-      url: 'http://localhost:3000/profiles/25/photos.json', 
+      url: 'http://localhost:3000/profiles/' + profile.id + '/photos.json', 
       photo: file,
       headers: {
-      	Authorization: "Token token=" + sessionStorage.getItem("auth_token")
+      	Authorization: "Token token=" + sessionStorage.getItem("auth_token"),
+      	'Content-Type': $scope.profile.photo.type
       }
     })
     .then(function (photo){
