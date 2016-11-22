@@ -1,0 +1,13 @@
+{
+  "name": "LocalArtistApp",
+  "homepage": "https://github.com/arun-instructor/LocalArtistApp",
+  "authors": [
+    "Teddy Coleman"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "ng-file-upload": "^12.2.13"
+  }
+}
