@@ -23,18 +23,7 @@ function CreateProfileController ($scope, $http, $location, Upload) {
     	console.log(profile);
     	console.log("profile uploaded properly")
     	console.log($scope.profile.photo);
-    	$scope.profile.photo.upload = Upload.upload({
-        url: 'http://localhost:3000/profiles/' + profile.id + '/photos.json', 
-        photo: $scope.profile.photo,
-	      headers: {
-	      	Authorization: "Token token=" + sessionStorage.getItem("auth_token")
-	      }
-      })
-      .then(function (photo){
-      	console.log(photo);
-      }, function(resp) {
-      	console.log(resp);
-      });
+    	$scope.upload($scope.file);
     }).error(function(error) {
       alert(error);
     });
@@ -42,4 +31,19 @@ function CreateProfileController ($scope, $http, $location, Upload) {
 	$scope.cancel = function() {
 		$location.path("/");
 	}
+
+  $scope.upload = function(file){
+  	Upload.upload({
+      url: 'http://localhost:3000/profiles/25/photos.json', 
+      photo: file,
+      headers: {
+      	Authorization: "Token token=" + sessionStorage.getItem("auth_token")
+      }
+    })
+    .then(function (photo){
+    	console.log(photo);
+    }, function(resp) {
+    	console.log(resp);
+    });
+  }
 };
