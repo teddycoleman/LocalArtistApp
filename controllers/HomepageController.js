@@ -1,3 +1,3 @@
-function HomepageController() {
+function HomepageController($scope) {
 
 }
