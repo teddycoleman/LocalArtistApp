@@ -1,17 +1,22 @@
 function PhotoUploadService(Upload, $location) {
-    this.upload = function(profileId, file) {
+    this.upload = function(profile) {
         Upload.upload({
-            url: 'http://localhost:3000/profiles/' + profileId + '/photos.json',
+            url: 'http://localhost:3000/profiles.json',
             data: {
-                photo: file
+                profile: {
+                    profile_pic: profile.profile_pic,
+                    name: profile.name,
+                    style: profile.style,
+                    profile_type: profile.profile_type,
+                    description: profile.description
+                }
             },
             headers: {
                 Authorization: "Token token=" + sessionStorage.getItem("auth_token")
             }
         })
-        .then(function (photo){
-            $location.path("/" + profileId + "/add_photos");
-            console.log(photo);
+        .then(function (profile){
+            $location.path("/" + profile.data.id + "/add_photos");
         }, function(resp) {
             console.log(resp);
         });
@@ -19,19 +24,10 @@ function PhotoUploadService(Upload, $location) {
 }
 
 function CreateProfileController ($scope, $http, $location, PhotoUploadService) {
+    console.log("here");
     $scope.create_profile = function (){
-        $http({
-            method: 'POST',
-            url: 'http://localhost:3000/profiles.json',
-            data: { profile: $scope.profile },
-            headers: {
-                Authorization: "Token token=" + sessionStorage.getItem("auth_token")
-            }
-        }).success(function (profile){
-            PhotoUploadService.upload(profile.id, $scope.profile.photo);
-        }).error(function(error) {
-            console.log(error);
-        });
+        console.log("also here");
+        PhotoUploadService.upload($scope.profile);
     }
     
     $scope.cancel = function() {

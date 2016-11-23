@@ -4,11 +4,17 @@ var app = angular.module('localArtist', ['ngRoute','ngAnimate','ngTouch','ui.boo
 	.controller('NavBarController', NavBarController)
   .controller('ModalInstanceCtrl', ModalInstanceCtrl)
 	.controller('ProfileController', ProfileController)
-	.controller('AddPhotosController', AddPhotosController)
+  .controller('AddPhotosController', AddPhotosController)
+	.controller('SearchController', SearchController)
 	.service('PhotoUploadService', PhotoUploadService);
 
 app.config(function($routeProvider) {
 	$routeProvider
+    .when("/search", {
+      templateUrl: "templates/search.html",
+      controller: "SearchController",
+      controllerAs: "searchCtrl"
+    })
     .when("/create_profile", {
       templateUrl: "templates/create_profile.html",
       controller: "CreateProfileController",

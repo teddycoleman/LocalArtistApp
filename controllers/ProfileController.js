@@ -15,7 +15,8 @@ function ProfileController ($scope, $http, $location) {
     method: 'GET',
     url: 'http://localhost:3000/profiles/' + profileId
   }).success(function (profile){
-  	$scope.profile = profile;
+  	$scope.profile = profile[0];
+    $scope.photo_url = profile[1];
   }).error(function(error) {
     console.log(error);
   });
