@@ -1,1 +1,39 @@
-<h1> Profile </h1>
+<div class="container">
+	<div class="row">
+		<div class="galleria col-md-12" ng-repeat="photo in photos">
+		    <img src="http://localhost:3000{{photo[1]}}">
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-4">
+			<img src="http://www.theartstory.org/images20/new_design/bio/bio_picasso_pablo.jpg">
+			<br>
+			<h3>{{profile.name}}</h3> 
+			<h3>{{profile.style}}</h3> 
+			<br>
+		</div>
+		<div class="col-md-8">
+			<p>{{profile.description}}</p> 
+		</div>
+	</div>
+	<br> 
+	<div class="row">
+		<div class="col-md-12">
+			<h2>Showings for {{profile.name}}</h2>
+		</div>
+	</div>
+	<div class="row" ng-repeat="showing in showings">
+		<div class="col-md-4">
+			<img src="http://localhost:3000{{showing.photo[1]}}" class="img-responsive">
+		</div>
+		<div class="col-md-8">
+			<p> {{showing.artist.name}} has art at {{showing.gallery.name}} [TODO: Make this not suck]</p>
+		</div>
+	</div>
+
+	<br>
+	<br>
+</div>
+
+
