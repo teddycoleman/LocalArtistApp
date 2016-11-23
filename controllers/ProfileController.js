@@ -7,7 +7,6 @@ function ProfileController ($scope, $http, $location) {
     url: 'http://localhost:3000/profiles/' + profileId + "/photos"
   }).success(function (photos){
   	$scope.photos = photos;
-  	console.log($scope.photos);
   }).error(function(error) {
     console.log(error);
   });
@@ -17,7 +16,6 @@ function ProfileController ($scope, $http, $location) {
     url: 'http://localhost:3000/profiles/' + profileId
   }).success(function (profile){
   	$scope.profile = profile;
-  	console.log($scope.profile);
   }).error(function(error) {
     console.log(error);
   });
@@ -27,7 +25,6 @@ function ProfileController ($scope, $http, $location) {
     url: 'http://localhost:3000/profiles/' + profileId + "/showings"
   }).success(function (showings){
   	$scope.showings = showings;
-  	console.log($scope.showings);
   }).error(function(error) {
     console.log(error);
   });

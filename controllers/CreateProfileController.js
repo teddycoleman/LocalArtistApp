@@ -1,4 +1,4 @@
-function PhotoUploadService(Upload) {
+function PhotoUploadService(Upload, $location) {
     this.upload = function(profileId, file) {
         Upload.upload({
             url: 'http://localhost:3000/profiles/' + profileId + '/photos.json',
@@ -10,6 +10,7 @@ function PhotoUploadService(Upload) {
             }
         })
         .then(function (photo){
+            $location.path("/" + profileId + "/add_photos");
             console.log(photo);
         }, function(resp) {
             console.log(resp);
@@ -32,8 +33,7 @@ function CreateProfileController ($scope, $http, $location, PhotoUploadService) 
             console.log(error);
         });
     }
-
-
+    
     $scope.cancel = function() {
         $location.path("/");
     }

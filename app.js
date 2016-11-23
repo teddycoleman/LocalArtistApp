@@ -4,6 +4,7 @@ var app = angular.module('localArtist', ['ngRoute','ngAnimate','ngTouch','ui.boo
 	.controller('NavBarController', NavBarController)
   .controller('ModalInstanceCtrl', ModalInstanceCtrl)
 	.controller('ProfileController', ProfileController)
+	.controller('AddPhotosController', AddPhotosController)
 	.service('PhotoUploadService', PhotoUploadService);
 
 app.config(function($routeProvider) {
@@ -12,6 +13,11 @@ app.config(function($routeProvider) {
       templateUrl: "templates/create_profile.html",
       controller: "CreateProfileController",
       controllerAs: "createProfileCtrl"
+    })
+    .when("/:profile_id/add_photos", {
+      templateUrl: "templates/add_photos.html",
+      controller: "AddPhotosController",
+      controllerAs: "addPhotosCtrl"
     })
     .when("/profiles/:id", {
       templateUrl: "templates/profile.html",
