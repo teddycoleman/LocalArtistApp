@@ -4,6 +4,16 @@ function ProfileController ($scope, $http, $location) {
 
 	$http({
     method: 'GET',
+    url: 'http://localhost:3000/profiles/' + profileId + "/photos"
+  }).success(function (photos){
+  	$scope.photos = photos;
+  	console.log($scope.photos);
+  }).error(function(error) {
+    console.log(error);
+  });
+
+	$http({
+    method: 'GET',
     url: 'http://localhost:3000/profiles/' + profileId
   }).success(function (profile){
   	$scope.profile = profile;

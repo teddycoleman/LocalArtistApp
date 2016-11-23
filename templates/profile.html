@@ -1,9 +1,7 @@
 <div class="container">
 	<div class="row">
-		<div class="galleria col-md-12">
-		    <img src="https://upload.wikimedia.org/wikipedia/en/b/bc/Old_guitarist_chicago.jpg">
-		    <img src="http://www.arthistoryarchive.com/arthistory/images/PabloPicasso-Guernica-1937.jpg">
-		    <img src="http://www.themost10.com/wp-content/uploads/2012/03/Le-R%C3%AAve-The-Dream-By-Pablo-Picasso.jpg">
+		<div class="galleria col-md-12" ng-repeat="photo in photos">
+		    <img src="http://localhost:3000{{photo[1]}}">
 		</div>
 	</div>
 	<br>
