@@ -1,0 +1,20 @@
+<h1> Add photos </h1>
+
+<div class="container">
+  <form name="createProfile">
+    <fieldset>
+      <div class="form-group row" >
+        <label class="col-md-4 control-label">Gallery Photos</label>
+        <div class="col-md-4">
+			    <input type="file" ngf-select="uploadFiles($file, $invalidfile)" multiple name="file" accept="image/*">
+        </div>
+      </div>
+		</fieldset>
+	</form>
+	<div class="row">
+		<div class="col-md-12">
+	    <button class="btn btn-primary" ng-click="goToProfile()">Create Profile</button>
+	    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	   </div>
+	</div>
+</div>
