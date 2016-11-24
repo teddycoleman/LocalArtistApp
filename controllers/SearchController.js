@@ -1,5 +1,4 @@
 function SearchController ($scope, $http, $location) {
-	console.log("OK");
 	$scope.data = [];
 
 	$http({
@@ -9,7 +8,6 @@ function SearchController ($scope, $http, $location) {
   	angular.forEach(profiles, function(profile){
       $scope.data.push(profile);
     });
-    console.log($scope.data)
   }).error(function(error) {
     console.log(error);
   });
@@ -21,9 +19,7 @@ function SearchController ($scope, $http, $location) {
   	angular.forEach(data, function(element){
   		$scope.data.push(element);
   	});
-    console.log($scope.data);
   }).error(function(error) {
     console.log(error);
   });
-
 }
