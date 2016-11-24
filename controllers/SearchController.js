@@ -5,9 +5,9 @@ function SearchController ($scope, $http, $location) {
 	$http({
     method: 'GET',
     url: 'http://localhost:3000/profiles/'
-  }).success(function (data){
-  	angular.forEach(data, function(element){
-      $scope.data.push(element);
+  }).success(function (profiles){
+  	angular.forEach(profiles, function(profile){
+      $scope.data.push(profile);
     });
     console.log($scope.data)
   }).error(function(error) {
@@ -21,6 +21,7 @@ function SearchController ($scope, $http, $location) {
   	angular.forEach(data, function(element){
   		$scope.data.push(element);
   	});
+    console.log($scope.data);
   }).error(function(error) {
     console.log(error);
   });

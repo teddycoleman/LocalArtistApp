@@ -12,12 +12,29 @@
 	</div>
 
 	<row ng-repeat='datum in data | filter:searchBox' >
-	<!-- 		<div class="col-md-4">
-				<img src="http://localhost:3000{{showing.photo[1]}}" class="img-responsive">
-			</div> -->
-			<div class="col-md-8">
-				<p> {{datum.name}} {{datum.profile_type}} {{datum.description}}</p>
+		<div class='container' ng-if="datum[0]">
+			<div class="col-md-4">
+				<img src="http://localhost:3000{{datum[1]}}" class="img-responsive">
 			</div>
+			<div class="col-md-8">
+				<h1> Profile: {{datum[0].name}} </h1>
+				<h3> Style: {{datum[0].style}} </h3>
+				<p> {{datum[0].description}}</p>
+			</div>
+		</div>
+		<br>
+		<div class='container' ng-if="datum.showing">
+			<div class="col-md-4">
+				<img src="http://localhost:3000{{datum.profile_pic}}" class="img-responsive">
+			</div>
+			<div class="col-md-8">
+				<h1> Showing: {{datum.artist.name}} is showing at {{datum.gallery.name}}</h1>
+				<h3> About the Artist:  </h3>
+				<p>{{datum.artist.description}}</p>
+				<h3> About the Gallery: {{datum.gallery.description}}</h3>
+				<p>{{datum.gallery.description}}</p>
+			</div>
+		</div>
 	</row>
 
 </div>
