@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1> Create Showing </h1>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<select ng-model="selectedProfile" > 
+				<option ng-repeat="profile in profiles" value="{{profile[0].id}}"> {{profile[0].name}}</option>
+			</select>
+		</div>
+		<div class="col-md-12">
+			<!-- <img ng-repeat="photo in photos" src="http://localhost:3000{{photo[1]}}" /> -->
+			<select ng-model="selectedPhoto" > 
+				<option ng-repeat="photo in photos" value="{{photo[0].id}}"> {{photo[1]}}</option>
+			</select>
+		</div>
+		<div class="col-md-12">
+			<!-- <img ng-repeat="photo in photos" src="http://localhost:3000{{photo[1]}}" /> -->
+			<textarea ng-model="description" > </textarea>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+	    <button class="btn btn-primary" ng-click="create_showing()">Create Showing</button>
+	    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	   </div>
+	</div>
+</div>

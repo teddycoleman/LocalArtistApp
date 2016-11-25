@@ -6,11 +6,17 @@ var app = angular.module('localArtist', ['ngRoute','ngAnimate','ngTouch','ui.boo
 	.controller('ProfileController', ProfileController)
   .controller('AddPhotosController', AddPhotosController)
   .controller('ShowingController', ShowingController)
+  .controller('CreateShowingController', CreateShowingController)
   .controller('SearchController', SearchController)
 	.service('PhotoUploadService', PhotoUploadService);
 
 app.config(function($routeProvider) {
 	$routeProvider
+    .when("/create_showing/:id", {
+      templateUrl: "templates/create_showing.html",
+      controller: "CreateShowingController",
+      controllerAs: "createShowingCtrl"
+    })
     .when("/showings/:id", {
       templateUrl: "templates/showing.html",
       controller: "ShowingController",
