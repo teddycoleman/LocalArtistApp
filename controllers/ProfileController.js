@@ -38,4 +38,9 @@ function ProfileController ($scope, $http, $location) {
 					});
           Galleria.run('.galleria');
       }());
+
+  $scope.goToCreateShowing = function () {
+    $location.path("/create_showing/" + profileId );
+  }
+
 }

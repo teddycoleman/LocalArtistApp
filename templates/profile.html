@@ -12,8 +12,8 @@
 			<h3>{{profile.name}}</h3> 
 			<h3>{{profile.style}}</h3> 
 
-			<button class="btn btn-primary" ng-if="profile.profile_type==='artist'">Create showing at my gallery</button>
-			<button class="btn btn-primary" ng-if="profile.profile_type==='gallery'">Show artwork at this	 gallery</button>
+			<button class="btn btn-primary" ng-if="profile.profile_type==='artist'" ng-click="goToCreateShowing()">Create showing at my gallery</button>
+			<button class="btn btn-primary" ng-if="profile.profile_type==='gallery'" ng-click="goToCreateShowing()">Show artwork at this gallery</button>
 			<br>
 		</div>
 		<div class="col-md-8">
