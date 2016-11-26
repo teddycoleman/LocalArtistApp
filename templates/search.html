@@ -1,40 +1,40 @@
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<h1> Search </h1>
+	<div class="row ">
+		<div class="col-md-2">
+			<h1 class="inline-block"> Explore </h1>
+		</div>
+		<div class="col-md-8">
+			<input type="text" ng-model='searchBox' class="inline-block form-control search-box" placeholder="What would you like to see?"> 
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-md-12">
-			<input type="text" ng-model='searchBox'>
-		</div>
-	</div>
+	<br>
+	<br>
 
-	<row ng-repeat='datum in data | filter:searchBox' >
-		<div class='container' ng-if="datum[0]">
-			<div class="col-md-4">
-				<img src="http://localhost:3000{{datum[1]}}" class="img-responsive">
+	<row ng-repeat='datum in data | filter:searchBox'>
+		<div class='container profile-link' ng-if="datum[0]" ng-click="goToProfile(datum[0].id)">
+			<div class="col-md-3">
+				<img src="http://localhost:3000{{datum[1]}}" class="img-responsive search-image">
 			</div>
-			<div class="col-md-8">
-				<h1> Profile: {{datum[0].name}} </h1>
-				<h3> Style: {{datum[0].style}} </h3>
+			<div class="col-md-9">
+				<h2 class="search-result-header"> {{datum[0].profile_type[0].toUpperCase() + datum[0].profile_type.slice(1)}}: {{datum[0].name}} </h2>
+				<h4> Style: {{datum[0].style}} </h4>
 				<p> {{datum[0].description}}</p>
 			</div>
 		</div>
 		<br>
-		<div class='container' ng-if="datum.showing">
-			<div class="col-md-4">
-				<img src="http://localhost:3000{{datum.profile_pic}}" class="img-responsive">
+		<div class='container profile-link' ng-if="datum.showing" ng-click="goToShowing(datum.showing.id)">
+			<div class="col-md-3">
+				<img src="http://localhost:3000{{datum.profile_pic}}" class="img-responsive search-image">
 			</div>
-			<div class="col-md-8">
-				<h1> Showing: {{datum.artist.name}} is showing at {{datum.gallery.name}}</h1>
-				<h3> About the Artist:  </h3>
+			<div class="col-md-9">
+				<h2 class="search-result-header"> Showing: {{datum.artist.name}} is showing at {{datum.gallery.name}}</h2>
+				<h4> About the Artist:  </h4>
 				<p>{{datum.artist.description}}</p>
-				<h3> About the Gallery: {{datum.gallery.description}}</h3>
+				<h4> About the Gallery: {{datum.gallery.description}}</h4>
 				<p>{{datum.gallery.description}}</p>
 			</div>
 		</div>
 	</row>
-
+	<br>
 </div>
