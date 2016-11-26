@@ -22,4 +22,13 @@ function SearchController ($scope, $http, $location) {
   }).error(function(error) {
     console.log(error);
   });
+
+  $scope.goToProfile = function(profileId){
+    $location.path("/profiles/" + profileId);
+  }
+
+  $scope.goToShowing = function(showingId){
+    console.log("clicked");
+    $location.path("/showings/" + showingId);
+  }
 }

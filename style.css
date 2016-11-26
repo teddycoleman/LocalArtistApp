@@ -3,6 +3,37 @@
 	width: 80vw;
 }
 
+/*******************
+ Search Page Styling
+ *******************/
+
+.inline-block{
+	display: inline-block;
+}
+
+.profile-link{
+	cursor: pointer;
+}
+
+.search-box{
+	position: relative;
+	top: 22px;
+}
+
+.search-image{
+	width: 100%;
+	height: 40vh;
+	object-fit: cover;
+}
+
+.search-result-header {
+	margin-top: 0;
+}
+
+/****************
+ Homepage Styling
+ ****************/
+
 .cover-photo {
 	width: 100%;
 	height: 60vh;
@@ -25,9 +56,9 @@
 	text-align: center;
 }
 
-/****************************** 
- Navbar coloration and settings
- ******************************/
+/**************
+ Navbar Styling
+ **************/
 
 .navbar-default {
   background-color: #6495ED;
