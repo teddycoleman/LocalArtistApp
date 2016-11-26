@@ -1,49 +1,38 @@
 <div class="container">
 	<div class="row">
-<!-- 		<div class="galleria col-md-12" >
-		    <img ng-repeat="photo in photos" src="http://localhost:3000{{photo[1]}}">
-		</div> -->
-		<ng-image-gallery
-	    images="images"
-	    methods="methods"
-	    thumbnails="true"
-	    inline="true"
-	    img-bubbles="false"
-	    bg-close="false"
-	    bubbles="true"
-	    img-anim="fadeup"
-	    on-open="opened();"
-	    on-close="closed();"
-		></ng-image-gallery>
+		<ng-image-gallery images="images" methods="methods" thumbnails="true" inline="true" img-bubbles="false" bg-close="false" bubbles="true" img-anim="fadeup" on-open="opened();" on-close="closed();"></ng-image-gallery> 
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-md-4">
-			<img src="http://localhost:3000{{photo_url}}" class="img-responsive">
-			<br>
-			<h3>{{profile.name}}</h3> 
-			<h3>{{profile.style}}</h3> 
-
+		<div class="col-md-3">
+			<img src="http://localhost:3000{{photo_url}}" class="img-responsive search-image">
+		</div>
+		<div class="col-md-9">
+			<h2 class="search-result-header">{{profile.name}}</h2> 
+			<h4>Style: {{profile.style}}</h4>
+			<p>{{profile.description}}</p>
+			<br> 
 			<button class="btn btn-primary" ng-if="profile.profile_type==='artist'" ng-click="goToCreateShowing()">Create showing at my gallery</button>
 			<button class="btn btn-primary" ng-if="profile.profile_type==='gallery'" ng-click="goToCreateShowing()">Show artwork at this gallery</button>
-			<br>
-		</div>
-		<div class="col-md-8">
-			<p>{{profile.description}}</p> 
 		</div>
 	</div>
 	<br> 
 	<div class="row">
 		<div class="col-md-12">
-			<h2>Showings for {{profile.name}}</h2>
+			<h1>Showings for {{profile.name}}</h1>
 		</div>
 	</div>
+	<br>
 	<div class="row" ng-repeat="showing in showings">
-		<div class="col-md-4">
-			<img src="http://localhost:3000{{showing.photo[1]}}" class="img-responsive">
-		</div>
-		<div class="col-md-8">
-			<p> {{showing.artist.name}} has art at {{showing.gallery.name}} [TODO: Make this not suck]</p>
+		<div class="container profile-link" ng-click="goToShowing(showing.showing.id)">
+			<div class="col-md-3">
+				<img src="http://localhost:3000{{showing.photo[1]}}" class="img-responsive ">
+			</div>
+			<div class="col-md-9">
+				<h3 class="search-result-header"> Check out {{showing.artist.name}} at {{showing.gallery.name}} 
+				</h3>
+				<p>{{showing.gallery.description}}</p>
+			</div>
 		</div>
 	</div>
 

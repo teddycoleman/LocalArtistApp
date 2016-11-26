@@ -35,8 +35,12 @@ function ProfileController ($scope, $http, $location) {
     console.log(error);
   });
 
-  $scope.goToCreateShowing = function () {
+  $scope.goToCreateShowing = function() {
     $location.path("/create_showing/" + profileId );
+  }
+
+  $scope.goToShowing = function(showingId) {
+    $location.path("/showings/" + showingId );
   }
 
 }
