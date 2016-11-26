@@ -64,6 +64,10 @@ function NavBarController ($scope, $uibModal, $log, $http, $location) {
     $location.path("/create_profile");
   }
 
+  $scope.goToSearch = function(){
+    $location.path("/search");
+  }
+
   $scope.isSignedIn = function(){
     return sessionStorage.getItem("auth_token") ? true : false;
   }

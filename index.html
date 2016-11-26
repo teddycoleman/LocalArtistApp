@@ -60,10 +60,12 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul ng-if="!isSignedIn()" class="nav navbar-nav navbar-right">
+	    		<button class="btn btn-default navbar-btn" ng-click="goToSearch()">Explore!</button>
 	        <button class="btn btn-default navbar-btn" ng-click="openLogin()">Login</button>
 	        <button class="btn btn-default navbar-btn" ng-click="openSignUp()">Sign Up</button>
 	      </ul>
 	      <ul ng-if="isSignedIn()" class="nav navbar-nav navbar-right">
+	      	<button class="btn btn-default navbar-btn" ng-click="goToSearch()">Explore!</button>
 	        <button class="btn btn-default navbar-btn" ng-click="goToCreateProfile()"> Create Profile </button>
 	        <button class="btn btn-default navbar-btn" ng-click="logout()"> Log Out </button>
 	      </ul>
