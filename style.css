@@ -1,3 +1,16 @@
+/***************************
+ Create Profile Page Styling
+ ***************************/
+
+.radio-button{
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
+
+label{
+  font-size: 16px;
+}
+
 /*******************
  Profile Page Styling
  *******************/
