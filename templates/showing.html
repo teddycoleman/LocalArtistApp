@@ -1,13 +1,35 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-12">
-			<h1> Showing </h1>
+		<ng-image-gallery images="images" methods="methods" thumbnails="true" inline="true" img-bubbles="false" bg-close="false" bubbles="true" img-anim="fadeup" on-open="opened();" on-close="closed();"></ng-image-gallery> 
+	</div>
+	<br>
+	<div class="row">
+		<h1> About the Artist: </h1>
+		<br>
+		<div class="container profile-link" ng-click="goToProfile(showing.artist.id)">
+			<div class="col-md-3">
+				<img src="http://localhost:3000{{showing.artist_pic}}" class="img-responsive search-image">
+			</div>
+			<div class="col-md-9 profile-text">
+				<h2 class="search-result-header">{{showing.artist.name}}</h2> 
+				<h4>Style: {{showing.artist.style}}</h4>
+				<p>{{showing.artist.description}}</p>
+			</div>
 		</div>
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-md-4">
-			<img src="http://localhost:3000{{showing.photo[1]}}" class="img-responsive">
+		<h1> About the Venue: </h1>
+		<br>
+		<div class="container profile-link" ng-click="goToProfile(showing.gallery.id)">
+			<div class="col-md-3">
+				<img src="http://localhost:3000{{showing.gallery_pic}}" class="img-responsive search-image">
+			</div>
+			<div class="col-md-9 profile-text">
+				<h2 class="search-result-header">{{showing.gallery.name}}</h2> 
+				<h4>Style: {{showing.gallery.style}}</h4>
+				<p>{{showing.gallery.description}}</p>
+			</div>
 		</div>
 	</div>
 </div>
