@@ -1,5 +1,6 @@
 function AddPhotosController ($scope, $http, $location, Upload) {
     var profileId = $location.path().split("/")[1];
+    $scope.images = [];
 
     $scope.uploadFiles = function(files, errFiles) {
         $scope.file = files;
@@ -15,7 +16,12 @@ function AddPhotosController ($scope, $http, $location, Upload) {
             }
         })
         .then(function (photo){
+            $scope.images.push({
+                url: 'http://localhost:3000' + photo.data[1]
+            });
+            console.log("uploaded");
             console.log(photo);
+            console.log($scope.images);
         }, function(resp) {
             console.log(resp);
         });
