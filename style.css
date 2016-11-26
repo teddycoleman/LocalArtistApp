@@ -1,6 +1,17 @@
-.galleria {
-	height: 500px ;
-	width: 80vw;
+/*******************
+ Profile Page Styling
+ *******************/
+
+.next{
+	z-index: 1000;
+}
+
+.ng-image-gallery.inline .ng-image-gallery-modal {
+	height: 50vh !important;
+}
+
+.galleria-image{
+	height: 100%;
 }
 
 /*******************
@@ -133,3 +144,5 @@
     background-color: #c0392b;
   }
 }
+
+

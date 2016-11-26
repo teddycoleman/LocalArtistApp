@@ -1,8 +1,20 @@
 <div class="container">
 	<div class="row">
-		<div class="galleria col-md-12" >
+<!-- 		<div class="galleria col-md-12" >
 		    <img ng-repeat="photo in photos" src="http://localhost:3000{{photo[1]}}">
-		</div>
+		</div> -->
+		<ng-image-gallery
+	    images="images"
+	    methods="methods"
+	    thumbnails="true"
+	    inline="true"
+	    img-bubbles="false"
+	    bg-close="false"
+	    bubbles="true"
+	    img-anim="fadeup"
+	    on-open="opened();"
+	    on-close="closed();"
+		></ng-image-gallery>
 	</div>
 	<br>
 	<div class="row">
