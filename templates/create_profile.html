@@ -1,41 +1,43 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<h1> Create profile </h1>
+			<h1 class="text-center"> Create profile </h1>
 		</div>
 	</div>
 </div>
+
+<br>
 
 <div class="container">
   <form name="createProfile">
     <fieldset>
       <div class="form-group row" name="profile" >
-        <label class="col-md-4 control-label">Profile Type</label>
+        <label class="col-md-2 col-md-offset-3 control-label">Profile Type</label>
         <div class="col-md-4">
-        	<input type="radio" ng-model="profile.profile_type" value="gallery">Venue<br>
-  				<input type="radio" ng-model="profile.profile_type" value="artist">Artist<br>
+        	<input type="radio" ng-model="profile.profile_type" value="gallery" class="radio-button">Venue
+  				<input type="radio" ng-model="profile.profile_type" value="artist" class="radio-button">Artist<br>
         </div>
       </div>
       <div class="form-group row" >
-        <label class="col-md-4 control-label">Name</label>
+        <label class="col-md-2 col-md-offset-3 control-label">Name</label>
         <div class="col-md-4">
           <input type="text" class="form-control" name="name" ng-model="profile.name" required />
         </div>
       </div>
       <div class="form-group row" >
-        <label class="col-md-4 control-label">Style</label>
+        <label class="col-md-2 col-md-offset-3 control-label">Style</label>
         <div class="col-md-4">
           <input type="text" class="form-control" name="style" ng-model="profile.style" required />
         </div>
       </div>
       <div class="form-group row" >
-        <label class="col-md-4 control-label">Description</label>
+        <label class="col-md-2 col-md-offset-3 control-label">Description</label>
         <div class="col-md-4">
           <textarea class="form-control" name="description" ng-model="profile.description"> </textarea>
         </div>
       </div>
       <div class="form-group row" >
-        <label class="col-md-4 control-label">Profile Photo</label>
+        <label class="col-md-2 col-md-offset-3 control-label">Profile Photo</label>
         <div class="col-md-4">
 			    <input type="file" ngf-select ng-model="profile.profile_pic" name="file" accept="image/*">
         </div>
@@ -43,7 +45,7 @@
 		</fieldset>
 	</form>
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-offset-5 col-md-3">
 	    <button class="btn btn-primary" ng-click="create_profile()">Next</button>
 	    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
 	   </div>
