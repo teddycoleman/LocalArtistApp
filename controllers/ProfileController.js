@@ -22,6 +22,7 @@ function ProfileController ($scope, $http, $location) {
   }).success(function (profile){
   	$scope.profile = profile[0];
     $scope.photo_url = profile[1];
+    console.log($scope.profile);
   }).error(function(error) {
     console.log(error);
   });
