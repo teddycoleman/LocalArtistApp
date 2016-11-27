@@ -1,6 +1,7 @@
-function CreateShowingController ($scope, $http, $location) {
+function CreateShowingController ($scope, $http, $location, $q) {
 
-  var profileId = $location.path().split('/')[2];
+  $scope.profileId = $location.path().split('/')[2];
+  $scope.filterId = null;
 
   $scope.data = {
     selectedProfile: null,
@@ -8,36 +9,87 @@ function CreateShowingController ($scope, $http, $location) {
     description: null
   }
 
-  $http({
-    method: 'GET',
-    url: 'http://localhost:3000/profiles/' 
-  }).success(function (profiles){
-    $scope.profiles = profiles
-  }).error(function(error) {
-    console.log(error);
-  });
+  $scope.getMainProfile = function() {
+    var deferred = $q.defer();
 
-  $http({
-    method: 'GET',
-    url: 'http://localhost:3000/profiles/' + profileId + '/photos'
-  }).success(function (photos){
-    $scope.photos = photos
-  }).error(function(error) {
-    console.log(error);
-  });
+    $http({
+      method: 'GET',
+      url: 'http://localhost:3000/profiles/' + $scope.profileId
+    }).success(function (main_profile){
+      $scope.main_profile = main_profile;
+      if(main_profile[0].profile_type === 'artist') {
+        $scope.filterId = $scope.profileId;
+      }
+      deferred.resolve(main_profile);
+    }).error(function(error) {
+      console.log(error);
+    });
+
+    return deferred.promise;
+  }
+
+  $scope.getAllProfiles = function() {
+    var deferred = $q.defer();
+
+    $http({
+      method: 'GET',
+      url: 'http://localhost:3000/profiles/' 
+    }).success(function (profiles){
+      $scope.profiles = profiles;
+      deferred.resolve(profiles);
+    }).error(function(error) {
+      console.log(error);
+    });
+
+    return deferred.promise;
+  }
+
+  $scope.populatePhotos = function() { 
+    console.log($scope.photos);
+    if($scope.main_profile[0].profile_type === 'artist'){
+      console.log("getting own photos")
+      $http({
+        method: 'GET',
+        url: 'http://localhost:3000/profiles/' + $scope.profileId + '/photos'
+      }).success(function (photos){
+        $scope.photos = photos
+      }).error(function(error) {
+        console.log(error);
+      });
+    }
+    else {
+      console.log("getting other photos");
+      $http({
+        method: 'GET',
+        url: 'http://localhost:3000/photos'
+      }).success(function (photos){
+        $scope.photos = photos
+        console.log(photos);
+      }).error(function(error) {
+        console.log(error);
+      });
+    }
+  }
+
+  $q.all([
+    $scope.getMainProfile(),
+    $scope.getAllProfiles()
+  ]).then(function(data) {
+      $scope.populatePhotos();
+    }
+  );
 
   $scope.create_showing = function(){
     
     var data = {
-      artist_id: profileId,
-      gallery_id: $scope.selectedProfile,
-      // photo_id: photo[0].id,
+      artist_id: $scope.isArtist($scope.main_profile) ? $scope.profileId : $scope.selectedProfile, 
+      gallery_id: $scope.isArtist($scope.main_profile) ? $scope.selectedProfile : $scope.profileId,
       description: $scope.description
     }
 
     $http({
       method: 'POST',
-      url: 'http://localhost:3000/profiles/' + profileId + '/showings',
+      url: 'http://localhost:3000/profiles/' + $scope.profileId + '/showings',
       data: data,
       headers: {
         Authorization: "Token token=" + sessionStorage.getItem("auth_token")
@@ -67,4 +119,10 @@ function CreateShowingController ($scope, $http, $location) {
       console.log(error);
     }); 
   }
+
+  $scope.isArtist = function(profile){
+    var bool = profile[0].profile_type === 'artist' ? true : false;
+    return bool;
+  }
 };
+
