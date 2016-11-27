@@ -13,7 +13,6 @@ function CreateShowingController ($scope, $http, $location) {
     url: 'http://localhost:3000/profiles/' 
   }).success(function (profiles){
     $scope.profiles = profiles
-    console.log(profiles);
   }).error(function(error) {
     console.log(error);
   });
@@ -23,7 +22,6 @@ function CreateShowingController ($scope, $http, $location) {
     url: 'http://localhost:3000/profiles/' + profileId + '/photos'
   }).success(function (photos){
     $scope.photos = photos
-    console.log(photos);
   }).error(function(error) {
     console.log(error);
   });
