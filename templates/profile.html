@@ -64,6 +64,7 @@
 		</div>
 	</div>
 	<br>
+	<p ng-if="isShowingsEmpty()"> No showings yet... </p>
 	<div class="row" ng-repeat="showing in showings">
 		<div class="container profile-link" ng-click="goToShowing(showing.showing.id)">
 			<div class="col-md-3">

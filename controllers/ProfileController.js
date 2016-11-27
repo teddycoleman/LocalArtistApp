@@ -3,7 +3,6 @@ function ProfileController ($scope, $http, $location) {
   var profileId = $location.path().split('/')[2];
 	$scope.user_id = parseInt(sessionStorage.getItem('user_id'));
   $scope.editMode = false; 
-  $scope.profile = {};
 
 	$http({
     method: 'GET',
@@ -70,5 +69,9 @@ function ProfileController ($scope, $http, $location) {
       console.log(error);
     });
   } 
+
+  $scope.isShowingsEmpty = function (){
+    return angular.equals($scope.showings, {})
+  }
 
 }
