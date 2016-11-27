@@ -72,14 +72,21 @@ label{
  ****************/
 
 .cover-photo {
-	width: 100%;
+	width: 100vw;
 	height: 60vh;
 	object-fit: cover;
 }
 
+.cover-photo-wrapper{
+  margin: 0 0 0 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100vw;
+}
+
 .cover-text {
 	position: absolute;
-	font-size: 8vh;
+	font-size: 12vh;
 	color: white;
 	left: 30px;
 }
@@ -99,7 +106,8 @@ label{
 
 .navbar-default {
   background-color: #6495ED;
-  border-color: #F0F8FF;
+  border-color: #6495ED;
+  margin-bottom: 0px;
 }
 .navbar-default .navbar-brand {
   color: #ecf0f1;
@@ -135,21 +143,21 @@ label{
   background-color: #87CEFA;
 }
 .navbar-default .navbar-toggle {
-  border-color: #c0392b;
+  border-color: #87CEFA;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
   background-color: #87CEFA;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #ecf0f1;
+  background-color: #87CEFA;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #ecf0f1;
+  border-color: #87CEFA;
 }
 .navbar-default .navbar-link {
-  color: #ecf0f1;
+  color: #87CEFA;
 }
 .navbar-default .navbar-link:hover {
   color: #87CEFA;
