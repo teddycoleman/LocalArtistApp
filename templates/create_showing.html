@@ -14,7 +14,7 @@
 		  <div class="form-group row" >
 		    <label class="col-md-2 col-md-offset-3 control-label">Choose a profile</label>
 				<select ng-model="selectedProfile" class="col-md-4" > 
-					<option ng-repeat="profile in profiles" ng-model="selectedImages" ng-if="profile[0].id != profileId && isArtist(main_profile) != isArtist(profile)" value="{{profile[0].id}}"> {{profile[0].name}}</option>
+					<option ng-repeat="profile in profiles" ng-if="profile[0].id != profileId && isArtist(main_profile) != isArtist(profile)" value="{{profile[0].id}}"> {{profile[0].name}}</option>
 				</select>
 			</div>
 
@@ -25,7 +25,7 @@
 
 		  <div class="form-group row" name="profile" >
 		  	<label class="col-md-2 col-md-offset-3 control-label">Select Photos</label>
-		  	<select id="myselection" multiple="true" ng-model="selectedImages" ng-options="photo[0].photo_file_name for photo in photos" value="{{photo[0].id}}" class="col-md-4"></select>
+		  	<select id="myselection" multiple="true" ng-model="selectedImages" ng-options="photo[0].photo_file_name for photo in photos | filter: {profile_id: filterId || selectedProfile || 0} " value="{{photo[0].id}}" class="col-md-4""></select>
 			</div>
 		</fieldset>
 	</form>
