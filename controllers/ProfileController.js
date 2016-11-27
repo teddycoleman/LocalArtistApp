@@ -1,7 +1,6 @@
 function ProfileController ($scope, $http, $location) {
-	console.log("OK");
+
 	var profileId = $location.path().split('/')[2];
-  $scope.images = [];
 
 	$http({
     method: 'GET',
@@ -12,6 +11,7 @@ function ProfileController ($scope, $http, $location) {
         url : 'http://localhost:3000' + photo[1]
       });
     });
+    $scope.methods.next();
   }).error(function(error) {
     console.log(error);
   });
