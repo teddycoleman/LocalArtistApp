@@ -1,6 +1,9 @@
 function ProfileController ($scope, $http, $location) {
 
-	var profileId = $location.path().split('/')[2];
+  var profileId = $location.path().split('/')[2];
+	$scope.user_id = parseInt(sessionStorage.getItem('user_id'));
+  $scope.editMode = false; 
+  $scope.profile = {};
 
 	$http({
     method: 'GET',
@@ -43,5 +46,29 @@ function ProfileController ($scope, $http, $location) {
   $scope.goToShowing = function(showingId) {
     $location.path("/showings/" + showingId );
   }
+
+  $scope.edit = function(){
+    $scope.editMode = !$scope.editMode;
+  }
+
+  $scope.addToGallery = function(){
+    $location.path("/" + profileId + "/add_photos/" );
+  }
+
+  $scope.saveProfile = function() {
+    $http({
+      method: "PUT", 
+      url: 'http://localhost:3000/profiles/' + profileId + '.json',
+      data: { profile: $scope.profile },
+      headers: {
+          Authorization: "Token token=" + sessionStorage.getItem("auth_token")
+      }
+    }).success(function (profile){
+      $scope.profile = profile;
+      $scope.edit();
+    }).error(function(error) {
+      console.log(error);
+    });
+  } 
 
 }
