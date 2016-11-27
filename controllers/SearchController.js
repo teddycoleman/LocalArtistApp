@@ -28,7 +28,6 @@ function SearchController ($scope, $http, $location) {
   }
 
   $scope.goToShowing = function(showingId){
-    console.log("clicked");
     $location.path("/showings/" + showingId);
   }
 }

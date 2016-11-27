@@ -12,7 +12,6 @@ function ProfileController ($scope, $http, $location) {
         url : 'http://localhost:3000' + photo[1]
       });
     });
-    console.log($scope.images);
   }).error(function(error) {
     console.log(error);
   });

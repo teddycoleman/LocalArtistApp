@@ -19,9 +19,6 @@ function AddPhotosController ($scope, $http, $location, Upload) {
             $scope.images.push({
                 url: 'http://localhost:3000' + photo.data[1]
             });
-            console.log("uploaded");
-            console.log(photo);
-            console.log($scope.images);
         }, function(resp) {
             console.log(resp);
         });
