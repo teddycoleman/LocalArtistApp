@@ -25,7 +25,7 @@
 		<br>
 		<div class='container profile-link' ng-if="datum.showing" ng-click="goToShowing(datum.showing.id)">
 			<div class="col-md-3">
-				<img src="http://localhost:3000{{datum.profile_pic}}" class="img-responsive search-image">
+				<img src="http://localhost:3000{{datum.photo[1]}}" class="img-responsive search-image">
 			</div>
 			<div class="col-md-9">
 				<h2 class="search-result-header"> Showing: {{datum.artist.name}} is showing at {{datum.gallery.name}}</h2>
