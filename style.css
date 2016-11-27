@@ -28,6 +28,7 @@ label{
 
 .ng-image-gallery.inline .ng-image-gallery-modal {
 	height: 60vh !important;
+  margin-top: 10px;
 }
 
 .galleria-image{
