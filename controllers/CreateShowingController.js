@@ -4,7 +4,7 @@ function CreateShowingController ($scope, $http, $location) {
 
   $scope.data = {
     selectedProfile: null,
-    selectedPhoto: null,
+    selectedImages: [],
     description: null
   }
 
@@ -29,13 +29,13 @@ function CreateShowingController ($scope, $http, $location) {
   });
 
   $scope.create_showing = function(){
-
+    
     var data = {
       artist_id: profileId,
       gallery_id: $scope.selectedProfile,
-      photo_id: $scope.selectedPhoto,
+      // photo_id: photo[0].id,
       description: $scope.description
-    };
+    }
 
     $http({
       method: 'POST',
@@ -45,11 +45,28 @@ function CreateShowingController ($scope, $http, $location) {
         Authorization: "Token token=" + sessionStorage.getItem("auth_token")
       }
     }).success(function (showing){
-      $scope.showing = showing;
-      console.log(showing);
+      angular.forEach($scope.selectedImages, function(photo){
+        var url = 'http://localhost:3000/photos/' + photo[0].id;
+        $http({
+          method: 'PUT',
+          url: url,
+          data: {
+            photo: {
+              showing_id: showing.id
+            }
+          },
+          headers: {  
+            Authorization: "Token token=" + sessionStorage.getItem("auth_token")          }
+        })
+        .success(function (photo){
+          console.log(photo)
+        }).error(function(error) {
+          console.log(error);
+        }); 
+      });
+      $location.path("/showings/" + showing.id)
     }).error(function(error) {
       console.log(error);
-    });
+    }); 
   }
-
 };
