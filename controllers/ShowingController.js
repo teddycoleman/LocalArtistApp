@@ -11,6 +11,7 @@ function ShowingController ($scope, $http, $location) {
         url : 'http://localhost:3000' + photo[1]
       });
     });
+    $scope.methods.next();
   }).error(function(error) {
     console.log(error);
   });
