@@ -125,4 +125,3 @@ function CreateShowingController ($scope, $http, $location, $q) {
     return bool;
   }
 };
-

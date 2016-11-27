@@ -21,6 +21,7 @@ function NavBarController ($scope, $uibModal, $log, $http, $location) {
           data: {user: user}
         }).success(function (user){
           sessionStorage.setItem("auth_token", user.auth_token);
+          sessionStorage.setItem("user_id", user.id);
         }).error(function(error) {
           Alert("Error creating user!");
         });
@@ -49,6 +50,7 @@ function NavBarController ($scope, $uibModal, $log, $http, $location) {
           data: {user: user}
         }).success(function (user){
           sessionStorage.setItem("auth_token", user.auth_token);
+          sessionStorage.setItem("user_id", user.id);
         }).error(function(error) {
           Alert("Error creating user!");
         });
@@ -58,6 +60,7 @@ function NavBarController ($scope, $uibModal, $log, $http, $location) {
 
   $scope.logout = function(){
     sessionStorage.removeItem("auth_token");
+    sessionStorage.removeItem("user_id");
   }
 
   $scope.goToCreateProfile = function(){

@@ -8,7 +8,8 @@ function PhotoUploadService(Upload, $location) {
                     name: profile.name,
                     style: profile.style,
                     profile_type: profile.profile_type,
-                    description: profile.description
+                    description: profile.description,
+                    user_id: sessionStorage.getItem("user_id")
                 }
             },
             headers: {

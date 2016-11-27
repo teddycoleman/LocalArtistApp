@@ -3,7 +3,7 @@
 		<ng-image-gallery images="images" methods="methods" thumbnails="true" inline="true" img-bubbles="false" bg-close="false" bubbles="true" img-anim="fadeup" on-open="opened();" on-close="closed();"></ng-image-gallery> 
 	</div>
 	<br>
-	<div class="row">
+	<div class="row" ng-if="!editMode">
 		<div class="col-md-3">
 			<img src="http://localhost:3000{{photo_url}}" class="img-responsive search-image">
 		</div>
@@ -14,6 +14,47 @@
 			<br> 
 			<button class="btn btn-primary" ng-if="profile.profile_type==='artist'" ng-click="goToCreateShowing()">Create showing at my gallery</button>
 			<button class="btn btn-primary" ng-if="profile.profile_type==='gallery'" ng-click="goToCreateShowing()">Show artwork at this gallery</button>
+			<button class="btn btn-primary" ng-if="profile.user_id === user_id" ng-click="edit()">Edit Profile</button>	
+		</div>
+	</div>
+	<div class="row" ng-if="editMode">
+		<div class="col-md-3">
+			<img src="http://localhost:3000{{photo_url}}" class="img-responsive search-image">
+		</div>	
+		<div class="col-md-9 profile-text">
+		  <form name="updateProfile">
+		    <fieldset>
+		      <div class="form-group row" name="profile" >
+		        <label class="col-md-2 control-label">Profile Type</label>
+		        <div class="col-md-4">
+		        	<input type="radio" ng-model="profile.profile_type" value="gallery" class="radio-button">Venue
+		  				<input type="radio" ng-model="profile.profile_type" value="artist" class="radio-button">Artist<br>
+		        </div>
+		      </div>
+		      <div class="form-group row" >
+		        <label class="col-md-2 control-label">Name</label>
+		        <div class="col-md-4">
+		          <input type="text" class="form-control" name="name" ng-model="profile.name" required />
+		        </div>
+		      </div>
+		      <div class="form-group row" >
+		        <label class="col-md-2 control-label">Style</label>
+		        <div class="col-md-4">
+		          <input type="text" class="form-control" name="style" ng-model="profile.style" required />
+		        </div>
+		      </div>
+		      <div class="form-group row" >
+		        <label class="col-md-2 control-label">Description</label>
+		        <div class="col-md-4">
+		          <textarea class="form-control" name="description" ng-model="profile.description"> </textarea>
+		        </div>
+		      </div>
+				</fieldset>
+			</form>	
+			<br> 
+			<button class="btn btn-primary" ng-click="saveProfile()">Save</button>
+			<button class="btn btn-primary" ng-click="edit()">Cancel</button>	
+			<button class="btn btn-primary" ng-click="addToGallery()">Add Photos to Gallery</button>	
 		</div>
 	</div>
 	<br> 
