@@ -1,0 +1,19 @@
+{
+  "name": "localartistapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teddycoleman/LocalArtistApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teddycoleman/LocalArtistApp/issues"
+  },
+  "homepage": "https://github.com/teddycoleman/LocalArtistApp#readme"
+}
