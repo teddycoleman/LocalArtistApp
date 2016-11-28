@@ -6,7 +6,7 @@ function ProfileController ($scope, $http, $location) {
 
 	$http({
     method: 'GET',
-    url: 'http://local-artist-api.herokuapp.com/profiles/' + profileId + "/photos"
+    url: 'https://local-artist-api.herokuapp.com/profiles/' + profileId + "/photos"
   }).success(function (photos){
     angular.forEach(photos, function(photo){
       $scope.images.push({
@@ -20,7 +20,7 @@ function ProfileController ($scope, $http, $location) {
 
 	$http({
     method: 'GET',
-    url: 'http://local-artist-api.herokuapp.com/profiles/' + profileId
+    url: 'https://local-artist-api.herokuapp.com/profiles/' + profileId
   }).success(function (profile){
   	$scope.profile = profile[0];
     $scope.photo_url = profile[1];
@@ -31,7 +31,7 @@ function ProfileController ($scope, $http, $location) {
 
   $http({
     method: 'GET',
-    url: 'http://local-artist-api.herokuapp.com/profiles/' + profileId + "/showings"
+    url: 'https://local-artist-api.herokuapp.com/profiles/' + profileId + "/showings"
   }).success(function (showings){
   	$scope.showings = showings;
   }).error(function(error) {
@@ -57,7 +57,7 @@ function ProfileController ($scope, $http, $location) {
   $scope.saveProfile = function() {
     $http({
       method: "PUT", 
-      url: 'http://local-artist-api.herokuapp.com/profiles/' + profileId + '.json',
+      url: 'https://local-artist-api.herokuapp.com/profiles/' + profileId + '.json',
       data: { profile: $scope.profile },
       headers: {
           Authorization: "Token token=" + sessionStorage.getItem("auth_token")

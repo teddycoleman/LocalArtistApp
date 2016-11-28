@@ -1,9 +1,9 @@
-function SearchController ($scope, $http, $location) {
+  function SearchController ($scope, $http, $location) {
 	$scope.data = [];
 
 	$http({
     method: 'GET',
-    url: 'http://local-artist-api.herokuapp.com/profiles/'
+    url: 'https://local-artist-api.herokuapp.com/profiles/'
   }).success(function (profiles){
   	angular.forEach(profiles, function(profile){
       $scope.data.push(profile);
@@ -14,7 +14,7 @@ function SearchController ($scope, $http, $location) {
  
 	$http({
     method: 'GET',
-    url: 'http://local-artist-api.herokuapp.com/showings/'
+    url: 'https://local-artist-api.herokuapp.com/showings/'
   }).success(function (data){
   	angular.forEach(data, function(element){
   		$scope.data.push(element);
