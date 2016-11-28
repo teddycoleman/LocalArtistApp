@@ -96,7 +96,7 @@ function CreateShowingController ($scope, $http, $location, $q) {
       }
     }).success(function (showing){
       angular.forEach($scope.selectedImages, function(photo){
-        var url = 'http://local-artist-api.herokuapp.com/photos/' + photo[0].id;
+        var url = 'https://local-artist-api.herokuapp.com/photos/' + photo[0].id;
         $http({
           method: 'PUT',
           url: url,
