@@ -1,9 +1,9 @@
 <div class="container">
 	<div class="row ">
-		<div class="col-md-2">
-			<h1 class="inline-block"> Explore </h1>
+		<div class="col-md-3">
+			<h1 class="inline-block"> Explore Art </h1>
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-9">
 			<input type="text" ng-model='searchBox' class="inline-block form-control search-box" placeholder="What would you like to see?"> 
 		</div>
 	</div>
@@ -13,7 +13,7 @@
 
 	<row ng-repeat='datum in data | filter:searchBox'>
 		<div class='container profile-link' ng-if="datum[0]" ng-click="goToProfile(datum[0].id)">
-			<div class="col-md-3">
+			<div class="col-md-3 search-profile-image">
 				<img src="http://localhost:3000{{datum[1]}}" class="img-responsive search-image">
 			</div>
 			<div class="col-md-9">
@@ -22,9 +22,8 @@
 				<p> {{datum[0].description}}</p>
 			</div>
 		</div>
-		<br>
 		<div class='container profile-link' ng-if="datum.showing" ng-click="goToShowing(datum.showing.id)">
-			<div class="col-md-3">
+			<div class="col-md-3 search-profile-image">
 				<img src="http://localhost:3000{{datum.photo[1]}}" class="img-responsive search-image">
 			</div>
 			<div class="col-md-9">
@@ -35,6 +34,7 @@
 				<p>{{datum.gallery.description}}</p>
 			</div>
 		</div>
+		<br>
 	</row>
 	<br>
 </div>

@@ -51,6 +51,7 @@ label{
 
 .profile-link{
 	cursor: pointer;
+  padding-left: 0;
 }
 
 .search-box{
@@ -66,6 +67,10 @@ label{
 
 .search-result-header {
 	margin-top: 0;
+}
+
+.search-profile-image {
+  padding-left: 0;
 }
 
 /****************
