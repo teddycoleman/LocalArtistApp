@@ -38,12 +38,12 @@ app.config(function($routeProvider) {
       controllerAs: "addPhotosCtrl"
     })
     .when("/profiles/:id", {
-      templateUrl: "templates/profile.html",
+      templateUrl: "/templates/profile.html",
       controller: "ProfileController",
       controllerAs: "profileCtrl"
     })
 		.when("/", {
-			templateUrl: "templates/homepage.html",
+			templateUrl: "/templates/homepage.html",
 			controller: "HomepageController",
 			controllerAs: "homepageCtrl"
 		})

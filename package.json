@@ -2,7 +2,7 @@
   "name": "localartistapp",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "bower install"
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/teddycoleman/LocalArtistApp#readme",
   "dependencies": {
-    "bower": "^1.8.0"
+    "bower": "^1.8.0",
+    "express": "^4.14.0"
   }
 }
