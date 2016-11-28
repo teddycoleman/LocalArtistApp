@@ -17,7 +17,7 @@ function NavBarController ($scope, $uibModal, $log, $http, $location, $route) {
       function (user) {
         $http({
           method: 'POST',
-          url: 'http://localhost:3000/users.json',
+          url: 'http://local-artist-api.herokuapp.com/users.json',
           data: {user: user}
         }).success(function (user){
           sessionStorage.setItem("auth_token", user.auth_token);
@@ -46,7 +46,7 @@ function NavBarController ($scope, $uibModal, $log, $http, $location, $route) {
       function (user) {
         $http({
           method: 'POST',
-          url: 'http://localhost:3000/users/sign_in.json',
+          url: 'http://local-artist-api.herokuapp.com/users/sign_in.json',
           data: {user: user}
         }).success(function (user){
           sessionStorage.setItem("auth_token", user.auth_token);

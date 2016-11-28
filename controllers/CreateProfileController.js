@@ -1,7 +1,7 @@
 function PhotoUploadService(Upload, $location) {
   this.upload = function(profile) {
     Upload.upload({
-      url: 'http://localhost:3000/profiles.json',
+      url: 'http://local-artist-api.herokuapp.com/profiles.json',
       data: {
         profile: {
           profile_pic: profile.profile_pic,

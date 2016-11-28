@@ -8,7 +8,7 @@ function AddPhotosController ($scope, $http, $location, Upload) {
     $scope.errFiles = errFiles;
 
     Upload.upload({
-      url: 'http://localhost:3000/profiles/' + profileId + '/photos.json',
+      url: 'http://local-artist-api.herokuapp.com/profiles/' + profileId + '/photos.json',
       data: {
         photo: files
       },
@@ -22,7 +22,7 @@ function AddPhotosController ($scope, $http, $location, Upload) {
         $scope.images = [];
       }
       $scope.images.push({
-        url: 'http://localhost:3000' + photo.data[1]
+        url: 'http://local-artist-api.herokuapp.com' + photo.data[1]
       });
       $scope.methods.next();
     }, function(resp) {

@@ -5,7 +5,7 @@
 	<br>
 	<div class="row" ng-if="!editMode">
 		<div class="col-md-3">
-			<img src="http://localhost:3000{{photo_url}}" class="img-responsive search-image">
+			<img src="http://local-artist-api.herokuapp.com{{photo_url}}" class="img-responsive search-image">
 		</div>
 		<div class="col-md-9 profile-text">
 			<h2 class="search-result-header">{{profile.name}}</h2> 
@@ -19,7 +19,7 @@
 	</div>
 	<div class="row" ng-if="editMode">
 		<div class="col-md-3">
-			<img src="http://localhost:3000{{photo_url}}" class="img-responsive search-image">
+			<img src="http://local-artist-api.herokuapp.com{{photo_url}}" class="img-responsive search-image">
 		</div>	
 		<div class="col-md-9 profile-text">
 		  <form name="updateProfile">
@@ -68,7 +68,7 @@
 	<div class="row" ng-repeat="showing in showings">
 		<div class="container profile-link" ng-click="goToShowing(showing.showing.id)">
 			<div class="col-md-3">
-				<img src="http://localhost:3000{{showing.photo[1]}}" class="img-responsive ">
+				<img src="http://local-artist-api.herokuapp.com{{showing.photo[1]}}" class="img-responsive ">
 			</div>
 			<div class="col-md-9">
 				<h3 class="search-result-header"> Check out {{showing.artist.name}} at {{showing.gallery.name}} 

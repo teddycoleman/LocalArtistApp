@@ -14,7 +14,7 @@ function CreateShowingController ($scope, $http, $location, $q) {
 
     $http({
       method: 'GET',
-      url: 'http://localhost:3000/profiles/' + $scope.profileId
+      url: 'http://local-artist-api.herokuapp.com/profiles/' + $scope.profileId
     }).success(function (main_profile){
       $scope.main_profile = main_profile;
       if(main_profile[0].profile_type === 'artist') {
@@ -33,7 +33,7 @@ function CreateShowingController ($scope, $http, $location, $q) {
 
     $http({
       method: 'GET',
-      url: 'http://localhost:3000/profiles/' 
+      url: 'http://local-artist-api.herokuapp.com/profiles/' 
     }).success(function (profiles){
       $scope.profiles = profiles;
       deferred.resolve(profiles);
@@ -50,7 +50,7 @@ function CreateShowingController ($scope, $http, $location, $q) {
       console.log("getting own photos")
       $http({
         method: 'GET',
-        url: 'http://localhost:3000/profiles/' + $scope.profileId + '/photos'
+        url: 'http://local-artist-api.herokuapp.com/profiles/' + $scope.profileId + '/photos'
       }).success(function (photos){
         $scope.photos = photos
       }).error(function(error) {
@@ -61,7 +61,7 @@ function CreateShowingController ($scope, $http, $location, $q) {
       console.log("getting other photos");
       $http({
         method: 'GET',
-        url: 'http://localhost:3000/photos'
+        url: 'http://local-artist-api.herokuapp.com/photos'
       }).success(function (photos){
         $scope.photos = photos
         console.log(photos);
@@ -89,14 +89,14 @@ function CreateShowingController ($scope, $http, $location, $q) {
 
     $http({
       method: 'POST',
-      url: 'http://localhost:3000/profiles/' + $scope.profileId + '/showings',
+      url: 'http://local-artist-api.herokuapp.com/profiles/' + $scope.profileId + '/showings',
       data: data,
       headers: {
         Authorization: "Token token=" + sessionStorage.getItem("auth_token")
       }
     }).success(function (showing){
       angular.forEach($scope.selectedImages, function(photo){
-        var url = 'http://localhost:3000/photos/' + photo[0].id;
+        var url = 'http://local-artist-api.herokuapp.com/photos/' + photo[0].id;
         $http({
           method: 'PUT',
           url: url,

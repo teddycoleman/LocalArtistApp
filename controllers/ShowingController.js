@@ -3,12 +3,12 @@ function ShowingController ($scope, $http, $location) {
 
   $http({
     method: 'GET',
-    url: 'http://localhost:3000/showings/' + $location.path().split('/')[2]
+    url: 'http://local-artist-api.herokuapp.com/showings/' + $location.path().split('/')[2]
   }).success(function (showing){
   	$scope.showing = showing
     angular.forEach(showing.photos, function(photo){
       $scope.images.push({
-        url : 'http://localhost:3000' + photo[1]
+        url : 'http://local-artist-api.herokuapp.com' + photo[1]
       });
     });
     $scope.methods.next();

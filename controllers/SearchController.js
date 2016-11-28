@@ -3,7 +3,7 @@ function SearchController ($scope, $http, $location) {
 
 	$http({
     method: 'GET',
-    url: 'http://localhost:3000/profiles/'
+    url: 'http://local-artist-api.herokuapp.com/profiles/'
   }).success(function (profiles){
   	angular.forEach(profiles, function(profile){
       $scope.data.push(profile);
@@ -14,7 +14,7 @@ function SearchController ($scope, $http, $location) {
  
 	$http({
     method: 'GET',
-    url: 'http://localhost:3000/showings/'
+    url: 'http://local-artist-api.herokuapp.com/showings/'
   }).success(function (data){
   	angular.forEach(data, function(element){
   		$scope.data.push(element);
