@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/teddycoleman/LocalArtistApp/issues"
   },
-  "homepage": "https://github.com/teddycoleman/LocalArtistApp#readme"
+  "homepage": "https://github.com/teddycoleman/LocalArtistApp#readme",
+  "dependencies": {
+    "bower": "^1.8.0"
+  }
 }
