@@ -30,6 +30,6 @@ To deploy:<br>
 
 ERD: 
 
-<img src="http://imgur.com/fu7V4ax" height="300px" alt="Home Page">
+<img src="http://i.imgur.com/fu7V4ax.png" height="300px" alt="Home Page">
 
 Wireframes: 
