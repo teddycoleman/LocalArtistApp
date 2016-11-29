@@ -10,7 +10,7 @@ Check it out here : https://local-artist.herokuapp.com/#/
 
 API for the app here: https://github.com/teddycoleman/LocalArtistApi.
 
-Technologies Used: <br>
+# Technologies Used: <br>
 HTML 5 <br>
 Javasript 5 <br>
 CSS 3<br>
@@ -19,7 +19,7 @@ Bootstrap 3.3.7 <br>
 ng-file-upload <br>
 ng-image-gallery
 
-Database (via rails api):<br>
+# Database (via rails api):<br>
 Postgresql <br>
 AWS S3 
 
@@ -28,11 +28,11 @@ To deploy:<br>
 2 - Run npm install 
 3 - Run node server.js
 
-ERD: 
+# ERD: 
 
 <img src="http://i.imgur.com/fu7V4ax.png" height="300px" alt="Home Page">
 
-Wireframes: 
+# Wireframes: 
 
 Homepage: <br>
 <img src="http://imgur.com/ZwU8RfV.png" height="300px" alt="Home Page">
