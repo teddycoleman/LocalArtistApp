@@ -33,3 +33,15 @@ ERD:
 <img src="http://i.imgur.com/fu7V4ax.png" height="300px" alt="Home Page">
 
 Wireframes: 
+
+Homepage: <br>
+<img src="http://imgur.com/ZwU8RfV.png" height="300px" alt="Home Page">
+
+Profile: <br>
+<img src="http://imgur.com/nIjER2y.png" height="300px" alt="Home Page">
+
+Showings Page: <br>
+<img src="http://imgur.com/egl3iWZ.png" height="300px" alt="Home Page">
+
+Explore Page: <br>
+<img src="http://imgur.com/5kNIdp3.png" height="300px" alt="Home Page">
