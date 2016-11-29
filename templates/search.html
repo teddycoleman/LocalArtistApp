@@ -14,7 +14,7 @@
 	<row ng-repeat='datum in data | filter:searchBox'>
 		<div class='container profile-link' ng-if="datum[0]" ng-click="goToProfile(datum[0].id)">
 			<div class="col-md-3 search-profile-image">
-				<img src="https://local-artist-api.herokuapp.com{{datum[1]}}" class="img-responsive search-image">
+				<img src="{{datum[1]}}" class="img-responsive search-image">
 			</div>
 			<div class="col-md-9">
 				<h2 class="search-result-header"> {{datum[0].profile_type[0].toUpperCase() + datum[0].profile_type.slice(1)}}: {{datum[0].name}} </h2>
@@ -24,7 +24,7 @@
 		</div>
 		<div class='container profile-link' ng-if="datum.showing" ng-click="goToShowing(datum.showing.id)">
 			<div class="col-md-3 search-profile-image">
-				<img src="https://local-artist-api.herokuapp.com{{datum.photo[1]}}" class="img-responsive search-image">
+				<img src="{{datum.photo[1]}}" class="img-responsive search-image">
 			</div>
 			<div class="col-md-9">
 				<h2 class="search-result-header"> Showing: {{datum.artist.name}} is showing at {{datum.gallery.name}}</h2>

@@ -10,7 +10,7 @@ function ProfileController ($scope, $http, $location) {
   }).success(function (photos){
     angular.forEach(photos, function(photo){
       $scope.images.push({
-        url : 'http://local-artist-api.herokuapp.com' + photo[1]
+        url : photo[1]
       });
     });
     $scope.methods.next();

@@ -8,7 +8,7 @@ function ShowingController ($scope, $http, $location) {
   	$scope.showing = showing
     angular.forEach(showing.photos, function(photo){
       $scope.images.push({
-        url : 'https://local-artist-api.herokuapp.com' + photo[1]
+        url : photo[1]
       });
     });
     $scope.methods.next();

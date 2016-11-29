@@ -22,7 +22,7 @@ function AddPhotosController ($scope, $http, $location, Upload) {
         $scope.images = [];
       }
       $scope.images.push({
-        url: 'http://local-artist-api.herokuapp.com' + photo.data[1]
+        url: photo.data[1]
       });
       $scope.methods.next();
     }, function(resp) {
