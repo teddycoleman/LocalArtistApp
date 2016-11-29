@@ -28,3 +28,8 @@ To deploy:<br>
 2 - Run npm install 
 3 - Run node server.js
 
+ERD: 
+
+<img src="http://imgur.com/fu7V4ax" height="300px" alt="Home Page">
+
+Wireframes: 
