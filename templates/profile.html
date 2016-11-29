@@ -68,7 +68,7 @@
 	<div class="row" ng-repeat="showing in showings">
 		<div class="container profile-link" ng-click="goToShowing(showing.showing.id)">
 			<div class="col-md-3">
-				<img src="{{showing.photo[1]}}" class="img-responsive ">
+				<img src="{{showing.photo[1].replace('s3.','s3-us-west-2.')}}" class="img-responsive ">
 			</div>
 			<div class="col-md-9">
 				<h3 class="search-result-header"> Check out {{showing.artist.name}} at {{showing.gallery.name}} 
