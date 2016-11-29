@@ -8,7 +8,7 @@ function ShowingController ($scope, $http, $location) {
   	$scope.showing = showing
     angular.forEach(showing.photos, function(photo){
       $scope.images.push({
-        url : photo[1]
+        url : photo[1].replace('s3.','s3-us-west-2.')
       });
     });
     $scope.methods.next();

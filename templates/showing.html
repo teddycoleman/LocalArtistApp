@@ -8,7 +8,7 @@
 		<br>
 		<div class="container profile-link" ng-click="goToProfile(showing.artist.id)">
 			<div class="col-md-3">
-				<img src="{{showing.artist_pic}}" class="img-responsive search-image">
+				<img src="{{showing.artist_pic.replace('s3.','s3-us-west-2.')}}" class="img-responsive search-image">
 			</div>
 			<div class="col-md-9 profile-text">
 				<h2 class="search-result-header">{{showing.artist.name}}</h2> 
@@ -23,7 +23,7 @@
 		<br>
 		<div class="container profile-link" ng-click="goToProfile(showing.gallery.id)">
 			<div class="col-md-3">
-				<img src="{{showing.gallery_pic}}" class="img-responsive search-image">
+				<img src="{{showing.gallery_pic.replace('s3.','s3-us-west-2.')}}" class="img-responsive search-image">
 			</div>
 			<div class="col-md-9 profile-text">
 				<h2 class="search-result-header">{{showing.gallery.name}}</h2> 

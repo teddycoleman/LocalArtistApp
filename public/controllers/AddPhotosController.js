@@ -22,7 +22,7 @@ function AddPhotosController ($scope, $http, $location, Upload) {
         $scope.images = [];
       }
       $scope.images.push({
-        url: photo.data[1]
+        url: photo.data[1].replace('s3.','s3-us-west-2.')
       });
       $scope.methods.next();
     }, function(resp) {
