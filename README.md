@@ -25,7 +25,7 @@ AWS S3
 
 To deploy:<br>
 1 - Clone github repo <br>
-2 - Run npm install 
+2 - Run npm install <br>
 3 - Run node server.js
 
 # ERD: 
