@@ -7,6 +7,9 @@ are curious to learn more about art, they can learn more about who artists are, 
 see art all around them.  
 
 Check it out here : https://local-artist.herokuapp.com/#/
+Sample login: <br>
+email: bsimpson@gmail.com <br> 
+password: swordfish
 
 API for the app here: https://github.com/teddycoleman/LocalArtistApi.
 
