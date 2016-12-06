@@ -81,6 +81,15 @@ label{
  Homepage Styling
  ****************/
 
+.main-explore{
+  position: relative;
+  z-index: 1000;
+  top: 70vh;
+  color: white !important;
+  font-size: 4vh;
+  border: 2px solid white !important;
+}
+
 .cover-photo {
 	width: 99vw;
 	height: 100vh;
@@ -126,6 +135,10 @@ label{
 /**************
  Navbar Styling
  **************/
+
+.navbar-btn {
+  color: white !important;  
+}
 
 .navbar-default {
   background-color: #6495ED;
