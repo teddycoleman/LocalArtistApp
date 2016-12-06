@@ -6,7 +6,8 @@ to beautify their venue, it's a way to easily connect with local artists and cre
 are curious to learn more about art, they can learn more about who artists are, what their artwork is, and where they can
 see art all around them.  
 
-Check it out here : https://local-artist.herokuapp.com/#/ <br>
+Check it out here : https://local-artist.herokuapp.com/#/ 
+
 Sample login: <br>
 email: bsimpson@gmail.com <br> 
 password: swordfish
