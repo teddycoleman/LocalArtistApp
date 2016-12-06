@@ -45,6 +45,10 @@ label{
  Search Page Styling
  *******************/
 
+.top-margin{
+  margin-top: 50px !important;
+}
+
 .inline-block{
 	display: inline-block;
 }
